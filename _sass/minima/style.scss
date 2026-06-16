@@ -1,0 +1,307 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+// -------------------
+// Custom styles         
+// -------------------
+
+// Font
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
+       url("/assets/fonts/Inter-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Medium.woff2") format("woff2"),
+       url("/assets/fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-SemiBold.woff2") format("woff2"),
+       url("/assets/fonts/Inter-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Bold.woff2") format("woff2"),
+       url("/assets/fonts/Inter-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Icon
+
+.icon-image {
+  vertical-align: middle;
+  margin-right: 8px;
+  height: 1.7em;
+}
+
+// Front
+
+.front-title {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: $title-line-height;
+  color: $lm-title-color-light;
+  @include center-text;
+
+  @media screen and (max-width: $on-medium) {
+    font-size: 48px;
+  }
+}
+
+.front-subtitle {
+  font-size: 20px;
+  color: $lm-title-color-light;
+  @include center-text;
+}
+
+// Feature
+
+.feature-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: $title-line-height;
+  @include center-text;
+}
+
+.feature-title-light {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: $title-line-height;
+  color: $lm-title-color-light;
+  @include center-text;
+}
+
+.feature-title-2 {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: $title-line-height;
+  @include center-text;
+}
+
+.feature-title-3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: $title-line-height;
+  @include center-text;
+}
+
+.feature-two-col-title {
+  font-weight: 600;
+  font-size: 42px;
+  text-align: left;
+}
+
+.feature-subtitle {
+  font-size: 20px;
+  color: $lm-text-color-dark;
+  @include center-text;
+}
+
+.feature-subtitle-light {
+  font-size: 20px;
+  color: $lm-title-color-light;
+  @include center-text;
+}
+
+.feature-link {
+  font-size: 18px;
+  @include center-text;
+}
+
+.feature-text {
+  font-size: 18px;
+  color: $lm-text-color-dark;
+  @include center-text;
+}
+
+.feature-two-col-text {
+  font-size: 18px;
+  color: $lm-text-color-dark;
+}
+
+.feature-two-col-text li {
+  margin-bottom: ($spacing-unit * 0.2);
+}
+
+.feature-image-center {
+  display: block;
+  border-radius: 5px;
+  margin-top:($spacing-unit * 1.6);
+  margin-bottom: ($spacing-unit * 1.6);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.feature-image-shadow-small {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.feature-image-small {
+  border-radius: 5px;
+}
+
+.image-top {
+  margin-top: 0;
+}
+
+.feature-diagram-small {
+  border-radius: 30px;
+  border: 1px dashed #d7d9de;
+}
+
+.feature-list {
+  font-size: 18px;
+  color: $lm-text-color-dark;
+  margin: 0 auto;
+  padding: 30px 0;
+  max-width: 800px;
+}
+
+.feature-list-item {
+  padding: 8px 0;
+}
+
+.feature-list-item b {
+  color: $lm-title-color-dark;
+}
+
+.bg--blue {
+  background-color: $lm-bg-color-blue;
+  color: $lm-title-color-light;
+}
+
+.bg--white {
+  background-color: $lm-bg-color-white;
+  color: $lm-title-color-dark;
+}
+
+.bg--light-grey {
+  background-color: $lm-bg-color-light-grey;
+  color: $lm-title-color-dark;
+}
+
+.bg--dark-grey {
+  background-color: $lm-bg-color-dark-grey;
+  color: $lm-title-color-light;
+}
+
+.bg--green {
+  background-color: $lm-bg-color-green;
+  color: $lm-title-color-dark;
+}
+
+.bg--header {
+  background-color: $lm-bg-color-dark-grey;
+  color: $lm-title-color-light;
+}
+
+// Connector
+
+.connector-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 22px;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.connector {
+  flex-basis: calc(50% - 10px); /* Half of container width minus half of gap */
+  box-sizing: border-box; /* Padding included in the width */
+  padding: ($spacing-unit * 1.4);
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  background-color: $lm-bg-color-white;
+}
+
+@media screen and (max-width: $on-medium) {
+  .connector {
+    flex-basis: 100%; /* Full container width */
+  }
+}
+
+.connector-title {
+  font-weight: 600;
+  font-size: 22px;
+  text-align: left;
+}
+
+.connector-text {
+  font-size: 17px;
+  color: $lm-text-color-dark;
+}
+
+.connector-image {
+  height: 64px;
+  margin-bottom: 25px;
+}
+
+// Video
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Button
+
+.button--blue {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: ($spacing-unit * 0.8);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: $lm-title-color-light;
+  background-color: $lm-btn-color-blue;
+  border: 2px solid $lm-btn-color-blue;
+  border-radius: 5px;
+
+  &:visited {
+    color: $lm-title-color-light;
+  }
+
+  &:hover, &:active {
+    background-color: $lm-btn-color-blue-active;
+    border-color: $lm-btn-color-blue-active;
+    color: $lm-title-color-light;
+  }
+}

@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+// -------------------
+// Variables
+// -------------------
+
+// Define defaults for each variable
+
+$base-font-family:         "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, sans-serif !default;
+$code-font-family:         "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-size:           16px !default;
+$base-font-weight:         400 !default;
+$small-font-size:          $base-font-size * 0.875 !default;
+$base-line-height:         1.5 !default;
+$title-line-height:        1.35 !default;
+$spacing-unit:             30px !default;
+$table-text-align:         left !default;
+
+// Width of the content area
+$content-width:            1200px !default;
+
+// Screen size
+$on-palm:                  640px !default;
+$on-laptop:                1200px !default;
+
+$on-medium:                $on-palm !default;
+$on-large:                 $on-laptop !default;
+
+// Notice the following mixin uses max-width, in a deprecated, desktop-first
+// approach, whereas media queries used elsewhere now use min-width.
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: #{$ratio}rem;
+}
+
+@mixin center-text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+
+// Light theme
+
+$lm-brand-color:           #818181 !default;
+$lm-brand-color-light:     lighten($lm-brand-color, 40%) !default;
+$lm-brand-color-dimmed:    darken($lm-brand-color, 11%) !default;
+$lm-brand-color-dark:      darken($lm-brand-color, 25%) !default;
+
+$lm-site-title-color:      #ffffff !default;
+
+$lm-heading-color:         #374252 !default;
+$lm-text-color:            $lm-brand-color-dark !default;
+$lm-background-color:      #fdfdfd !default;
+$lm-code-background-color: #f6f8fa !default;
+
+$lm-link-base-color:       #1e69d8 !default;
+$lm-link-visited-color:    darken($lm-link-base-color, 15%) !default;
+$lm-link-hover-color:      $lm-text-color !default;
+
+$lm-border-color-01:       $lm-brand-color-light !default;
+$lm-border-color-02:       lighten($lm-brand-color, 35%) !default;
+$lm-border-color-03:       $lm-brand-color-dark !default;
+
+$lm-table-text-color:      lighten($lm-heading-color, 18%) !default;
+$lm-table-zebra-color:     lighten($lm-brand-color, 46%) !default;
+$lm-table-header-bg-color: lighten($lm-brand-color, 43%) !default;
+$lm-table-header-border:   lighten($lm-brand-color, 37%) !default;
+$lm-table-border-color:    $lm-border-color-01 !default;
+
+// Base colors
+
+$lm-bg-color-blue:         #426de5 !default;
+$lm-bg-color-white:        #ffffff !default;
+$lm-bg-color-light-grey:   #f7f8fb !default;
+$lm-bg-color-dark-grey:    #1e2c3d !default;
+$lm-bg-color-green:        #25bea1 !default;
+
+$lm-btn-color-blue:        #11a0f3 !default;
+$lm-btn-color-blue-active: #1195e1 !default;
+
+// Custom styles
+
+$lm-front-title-color:     #ffffff !default;
+$lm-title-color-light:     #ffffff !default;
+$lm-title-color-dark:      #374252 !default;
+$lm-text-color-dark:       #575a6a !default;
+$lm-nav-item-color:        #ffffff !default;
+$lm-header-color:          $lm-bg-color-blue !default;
+$lm-footer-color:          $lm-bg-color-light-grey !default;
+
+// Syntax highlighting
+
+@mixin lm-highlight {
+  .highlight {
+    .err   { color: #e3d2d2; background-color: #a61717 } // Error
+
+    .c     { color: #9c9996 } // Comment
+    .cm    { color: #9c9996 } // Comment.Multiline
+    .cp    { color: #9c9996 } // Comment.Preproc
+    .c1    { color: #9c9996 } // Comment.Single
+    .cs    { color: #9c9996; font-style: italic } // Comment.Special
+
+    .gd    { color: #e25050 } // Generic.Deleted
+    .gd .x { color: #e25050 } // Generic.Deleted.Specific
+    .ge    { font-style: italic } // Generic.Emph
+    .gh    { color: #999999 } // Generic.Heading
+    .gi    { color: #3f993f } // Generic.Inserted
+    .gi .x { color: #3f993f } // Generic.Inserted.Specific
+    .go    { color: #888888 } // Generic.Output
+    .gp    { color: #555555 } // Generic.Prompt
+    .gr    { color: #aa0000 } // Generic.Error
+    .gs    { font-weight: bold } // Generic.Strong
+    .gt    { color: #aa0000 } // Generic.Traceback
+    .gu    { color: #aaaaaa } // Generic.Subheading
+
+    .k     { color: #cf222e } // Keyword
+    .kc    { color: #cf222e } // Keyword.Constant
+    .kd    { color: #cf222e } // Keyword.Declaration
+    .kp    { color: #cf222e } // Keyword.Pseudo
+    .kr    { color: #cf222e } // Keyword.Reserved
+    .kt    { color: #445588 } // Keyword.Type
+
+    .n     { color: #111111 }
+    .na    { color: #097e39 } // Name.Attribute
+    .nb    { color: #cf222e } // Name.Builtin
+    .bp    { color: #999999 } // Name.Builtin.Pseudo
+    .nc    { color: #097e39 } // Name.Class
+    .ne    { color: #990000 } // Name.Exception
+    .nf    { color: #2c7d74 } // Name.Function
+    .ni    { color: #097e39 } // Name.Entity
+    .nn    { color: #097e39 } // Name.Namespace
+    .no    { color: #a61154 } // Name.Constant
+    .nt    { color: #b81e63 } // Name.Tag
+    .nv    { color: #752a75 } // Name.Variable
+    .vc    { color: #752a75 } // Name.Variable.Class
+    .vg    { color: #752a75 } // Name.Variable.Global
+    .vi    { color: #752a75 } // Name.Variable.Instance
+
+    .o     { color: #0842a0 } // Operator
+    .ow    { color: #0842a0 } // Operator.Word
+
+    .m     { color: #005a99 } // Literal.Number
+    .mf    { color: #005a99 } // Literal.Number.Float
+    .mh    { color: #005a99 } // Literal.Number.Hex
+    .mi    { color: #005a99 } // Literal.Number.Integer
+    .il    { color: #005a99 } // Literal.Number.Integer.Long
+    .mo    { color: #005a99 } // Literal.Number.Oct
+
+    .s     { color: #914d08 } // Literal.String
+    .s1    { color: #914d08 } // Literal.String.Single
+    .s2    { color: #914d08 } // Literal.String.Double
+    .sb    { color: #914d08 } // Literal.String.Backtick
+    .sc    { color: #914d08 } // Literal.String.Char
+    .sd    { color: #914d08 } // Literal.String.Doc
+    .se    { color: #914d08 } // Literal.String.Escape
+    .sh    { color: #914d08 } // Literal.String.Heredoc
+    .si    { color: #914d08 } // Literal.String.Interpol
+    .sr    { color: #009926 } // Literal.String.Regex
+    .ss    { color: #0842a0 } // Literal.String.Symbol
+    .sx    { color: #914d08 } // Literal.String.Other
+
+    .w     { color: #bbbbbb } // Text.Whitespace
+
+    .lineno, .gl { color: #9c9996 } // Line Number
+    .hll   { background-color: #ffffcc } // Marked-lines
+  }
+}
+
+$brand-color: $lm-brand-color;
+$brand-color-light: $lm-brand-color-light;
+$brand-color-dimmed: $lm-brand-color-dimmed;
+$brand-color-dark: $lm-brand-color-dark;
+
+$site-title-color: $lm-site-title-color;
+
+$heading-color: $lm-heading-color;
+$text-color: $lm-text-color;
+$background-color: $lm-background-color;
+$code-background-color: $lm-code-background-color;
+
+$link-base-color: $lm-link-base-color;
+$link-visited-color: $lm-link-visited-color;
+$link-hover-color: $lm-link-hover-color;
+
+$border-color-01: $lm-border-color-01;
+$border-color-02: $lm-border-color-02;
+$border-color-03: $lm-border-color-03;
+
+$table-text-color: $lm-table-text-color;
+$table-zebra-color: $lm-table-zebra-color;
+$table-header-bg-color: $lm-table-header-bg-color;
+$table-header-border: $lm-table-header-border;
+$table-border-color: $lm-table-border-color;
+
+// Classic skin syntax highlighting
+@include lm-highlight;
+
+// Import pre-styling-overrides hook and style-partials.
+@import
+  "minima/base",             // Element resets
+  "minima/layout",           // Structure and style based on CSS selectors
+  "minima/style"             // Styles
+;

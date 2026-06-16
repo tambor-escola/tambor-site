@@ -1,0 +1,39 @@
+image: ruby:3.4.5
+
+definitions:
+  caches:
+    bundle: vendor/bundle
+  steps:
+    - step: &build-web-site
+        size: 4x
+        name: Build web site
+        trigger: automatic
+        script:
+          - ruby --version
+          - gem install jekyll bundler
+          - gem --version
+          - bundle config set --local path 'vendor/bundle'
+          - bundle install
+          - bundle exec jekyll build
+        artifacts:
+          - _site/**
+        caches:
+          - bundle
+
+    - step: &upload-to-s3
+        name: Upload to AWS S3
+        script:
+          - pipe: atlassian/aws-s3-deploy:2.1.0
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: 'us-east-1'
+              S3_BUCKET: $S3_BUCKET
+              LOCAL_PATH: '_site'
+              EXTRA_ARGS: '--cache-control no-store'
+
+pipelines:
+  branches:
+    main:
+      - step: *build-web-site
+      - step: *upload-to-s3

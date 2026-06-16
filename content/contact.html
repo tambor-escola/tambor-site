@@ -1,0 +1,202 @@
+---
+layout: base
+title: Contact us
+permalink: /contact/
+---
+
+<section class="platform-hero">
+  <div class="eip-container">
+    <p class="eip-pill">Get in touch</p>
+
+    <h1>
+      Explore the <span class="accent-1">Enterprise Intelligence Platform</span> for <span class="accent-2">yourself</span>
+    </h1>
+
+    <p>
+      Tell us about your programme and we'll set up a tailored walkthrough.
+    </p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="eip-container contact-grid">
+
+    <div class="contact-details">
+
+      <div class="contact-card">
+        <div class="contact-icon">✉</div>
+        <div>
+          <span>Email</span>
+          <a href="mailto:info@baosystems.com">info@baosystems.com</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">◎</div>
+        <div>
+          <span>Web</span>
+          <a href="https://baosystems.com" target="_blank" rel="noopener">
+            baosystems.com
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">⌖</div>
+        <div>
+          <span>Office</span>
+          <p>
+            2900 K St. NW, Suite 506<br>
+            Washington, DC 20007, USA
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contact-form-card">
+
+      <!-- SUCCESS MESSAGE -->
+      <div id="successMessage" style="display:none; margin-bottom:24px; padding:16px; border-radius:12px; background:#eaf7ef; color:#1f6b3a; font-weight:500;">
+        Thank you — your message has been sent.
+      </div>
+
+      <form
+        id="leadForm"
+        class="intake-form"
+        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+        method="POST"
+      >
+
+        <input type="hidden" name="oid" value="00D1I000001f58U" />
+        <input type="hidden" name="retURL" value="https://intelligence.baosystems.com/contact?success=1" />
+
+        <div class="row">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" name="first_name" required />
+          </div>
+
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" name="last_name" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Organization</label>
+          <input type="text" name="company" required />
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div class="field">
+          <label>Country</label>
+          <select name="country" required>
+            <option value="">Select your country</option>
+
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Bangladesh</option>
+            <option>Belgium</option>
+            <option>Brazil</option>
+            <option>Canada</option>
+            <option>China</option>
+            <option>Colombia</option>
+            <option>Czech Republic</option>
+            <option>Denmark</option>
+            <option>Egypt</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Greece</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Ireland</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Japan</option>
+            <option>Kenya</option>
+            <option>Mexico</option>
+            <option>Morocco</option>
+            <option>Netherlands</option>
+            <option>New Zealand</option>
+            <option>Nigeria</option>
+            <option>Norway</option>
+            <option>Pakistan</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Romania</option>
+            <option>Saudi Arabia</option>
+            <option>Singapore</option>
+            <option>South Africa</option>
+            <option>South Korea</option>
+            <option>Spain</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Thailand</option>
+            <option>Turkey</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Vietnam</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Message</label>
+          <textarea name="Notes__c" rows="5"></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" style="cursor:pointer;">Send message →</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("leadForm");
+    const successMessage = document.getElementById("successMessage");
+
+    // Save flag before redirect
+    if (form) {
+      form.addEventListener("submit", function () {
+        localStorage.setItem("formSubmitted", "true");
+      });
+    }
+
+    // Check success
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("success") === "1" || localStorage.getItem("formSubmitted") === "true") {
+      if (successMessage) {
+        successMessage.style.display = "block";
+        successMessage.scrollIntoView({ behavior: "smooth" });
+      }
+
+      localStorage.removeItem("formSubmitted");
+    }
+
+  });
+</script>
