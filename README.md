@@ -1,4 +1,4 @@
-# Tambor — Time for Art
+# Tambor — Artes Visuais
 
 Welcome to the repository for the Tambor website.
 
