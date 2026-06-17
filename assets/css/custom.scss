@@ -443,7 +443,7 @@ img {
 
 .activity-list {
   margin-top: 4rem;
-  border-top: 1px solid rgba(23, 32, 51, .18);
+  border-top: none;
 }
 
 .activity {
@@ -548,6 +548,9 @@ img {
   grid-template-columns: 3fr 5fr 4fr;
   gap: 3rem;
   margin-top: 10rem;
+
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
 }
 
 .manifesto span {
@@ -563,8 +566,8 @@ img {
 }
 
 .manifesto .pt {
-  font-size: clamp(3rem, 5.6vw, 6.4rem);
-  letter-spacing: 0em;
+  font-size: clamp(2rem, 3.8vw, 5rem);
+  letter-spacing: 0;
 }
 
 .manifesto .en {
@@ -929,16 +932,12 @@ img {
 
 .course-title-row {
   display: grid;
-  grid-template-columns: 4rem 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: start;
 }
 
-.course-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  color: rgba(23, 32, 51, .55);
-}
+
 
 .course-main h3 {
   margin: 0;
@@ -974,7 +973,13 @@ img {
 }
 
 .course-weeks {
-  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.course-weeks p {
+  grid-column: 1 / -1;
 }
 
 .course-weeks p,
@@ -988,9 +993,9 @@ img {
 }
 
 .course-weeks a {
-  display: inline-block;
-  min-width: 10.5rem;
-  margin: 0 1rem 1rem 0;
+  display: block;
+  width: 100%;
+  margin: 0;
   padding: 1.2rem 1.4rem;
   border: 1px solid rgba(23, 32, 51, .22);
   text-decoration: none;
@@ -1014,6 +1019,13 @@ img {
 .course-weeks a:hover {
   border-color: var(--cobalt);
   color: var(--cobalt);
+}
+
+.week-card {
+  display: block;
+  min-width: 10.5rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid rgba(23, 32, 51, .22);
 }
 
 .course-info {
@@ -1067,11 +1079,171 @@ img {
   display: grid;
   grid-template-columns: 12rem 1fr;
   align-items: center;
-  min-height: 8rem;
   border-top: 1px solid rgba(23, 32, 51, .18);
+  padding: 1rem 0;
 }
 
 .course-info dt,
 .course-info dd {
   margin: 0;
+}
+
+.course-collapsible {
+  display: block;
+}
+
+.course-summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.course-summary::-webkit-details-marker {
+  display: none;
+}
+
+.course-summary .course-main {
+  padding: 0;
+}
+
+.course-arrow {
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.course-collapsible[open] .course-arrow {
+  transform: rotate(180deg);
+}
+
+.course-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.course-weeks-side {
+  margin-top: 1.5rem;
+}
+
+.teacher-work {
+  margin-top: 2.5rem;
+  max-width: 570px;
+}
+
+.teacher-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+  margin-bottom: 1rem;
+}
+
+.teacher-row {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.teacher-row img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.teacher-row h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.teacher-row p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.teacher-gallery {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 620px;
+}
+
+.teacher-gallery img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+@media (max-width: 800px) {
+  .course-content {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.course-weeks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(23, 32, 51, .18);
+}
+
+.course-weeks p {
+  grid-column: 1 / -1;
+}
+
+.week-card {
+  display: block;
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid rgba(23, 32, 51, .22);
+}
+
+.week-card span {
+  display: block;
+  margin-bottom: .7rem;
+  font-size: .7rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.week-card strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.course-info dl {
+  margin: 1.5rem 0 0;
+}
+
+.course-info dl div {
+  min-height: 0 !important;
+  padding: 1.5rem 0 !important;
+  align-items: center !important;
+}
+
+.course-info dd {
+  line-height: 1.05 !important;
+}
+
+.course-weeks {
+  margin-top: 1.2rem !important;
 }
