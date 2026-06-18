@@ -7,6 +7,7 @@
   --coral: #e96b6b;
   --sage: #b9c7a1;
   --mist: #dfe8ef;
+  --sagedark: #71a052;
   --border: rgba(23, 32, 51, .22);
 }
 
@@ -547,7 +548,7 @@ img {
   display: grid;
   grid-template-columns: 3fr 5fr 4fr;
   gap: 3rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
 
   border-top: 1px solid var(--border);
   padding-top: 2rem;
@@ -925,9 +926,8 @@ img {
   display: grid;
   grid-template-columns: 6fr 5fr;
   gap: clamp(3rem, 7vw, 8rem);
-  margin-top: 5rem;
-  border-top: 1px solid rgba(23, 32, 51, .18);
-  padding-top: 3rem;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
 }
 
 .course-title-row {
@@ -942,7 +942,7 @@ img {
 .course-main h3 {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-size: clamp(2.5rem, 4.2vw, 4.8rem);
   font-weight: 400;
   line-height: .9;
   letter-spacing: -.05em;
@@ -1247,3 +1247,943 @@ img {
 .course-weeks {
   margin-top: 1.2rem !important;
 }
+
+.summer-program {
+  margin-top: 5rem;
+}
+
+.program-label,
+.registration-label {
+  margin: 0 0 2rem;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 3fr);
+}
+
+
+
+.program-grid > div {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(23, 32, 51, .22);
+}
+
+/* Remove o stroke da última linha */
+.program-grid > div:nth-last-child(-n+4) {
+  border-bottom: 0;
+}
+
+.program-grid > div:not(:nth-child(4n + 1)) {
+  border-left: 1px solid rgba(23, 32, 51, .22);
+}
+
+.program-week span,
+.program-time span,
+.program-item span {
+  display: block;
+  margin-bottom: .8rem;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.program-week strong,
+.program-time strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  font-weight: 400;
+}
+
+.program-item strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.8rem);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.program-item.guest strong {
+  color: var(--sagedark);
+}
+
+.program-item.main-course strong {
+  color: var(--cobalt);
+}
+
+.summer-registration {
+  margin-top: 6rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.registration-grid h2 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 5vw, 6rem);
+  font-weight: 400;
+  line-height: .9;
+}
+
+.registration-grid h2 span {
+  color: var(--coral);
+}
+
+.registration-grid p {
+  max-width: 48rem;
+  margin: 2rem 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  line-height: 1.25;
+}
+
+.registration-action {
+  text-align: left;
+}
+
+.registration-button {
+  display: inline-block;
+  padding: 2rem 3rem;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.registration-action p {
+  margin-top: 1.5rem;
+  max-width: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: .68rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+@media (max-width: 900px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-grid > div {
+    border-left: 0 !important;
+  }
+
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-action {
+    text-align: left;
+  }
+}
+
+.courses-label {
+  margin: 5rem 0 2rem;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.program-label,
+.courses-label,
+.registration-label {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin: 5rem 0 2rem;
+
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23,32,51,.55);
+}
+
+.course-feature + .course-feature {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+h3.convidado {
+  color: var(--sagedark);
+}
+
+.register-page {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 4rem, 112rem);
+  margin: 0 auto;
+  padding: 5rem 0 8rem;
+}
+
+.register-hero {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.register-eyebrow,
+.step-title span,
+.step-title p,
+.course-option small,
+.course-option > span,
+.week-options span,
+.modality-grid span,
+.register-summary small {
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.register-hero h1 {
+  margin: 1.5rem 0;
+  font-family: 'Cormorant Garamond', serif;
+font-size: clamp(2rem, 4vw, 4rem);
+font-weight: 400;
+  line-height: .8;
+}
+
+.register-hero p {
+  max-width: 48rem;
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 2.6vw, 3rem);
+  line-height: 1.2;
+}
+
+.register-hero p span {
+  color: var(--coral);
+  font-style: italic;
+}
+
+.register-step {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 4rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.step-title h2 {
+  margin: 1rem 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 400;
+}
+
+.step-title {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.step-title span {
+  display: block;
+  margin: 0;
+
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.option-list {
+  display: grid;
+  gap: 0;
+}
+
+.course-option {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(23, 32, 51, .18);
+  cursor: pointer;
+}
+
+.course-option strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 2vw, 2.4rem);
+  font-weight: 400;
+}
+
+.week-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.week-options label {
+  padding: 2rem;
+  border-left: 1px solid rgba(23, 32, 51, .18);
+  cursor: pointer;
+}
+
+.week-options strong {
+  display: block;
+  margin-top: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 2.4vw, 3rem);
+  font-weight: 400;
+}
+
+.modality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modality-grid label {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(23, 32, 51, .18);
+  cursor: pointer;
+}
+
+.modality-grid strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 2vw, 2.5rem);
+  font-weight: 400;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+}
+
+.form-grid label {
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  margin-top: 1rem;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--ink);
+  outline: 0;
+}
+
+.form-grid textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+input[type="radio"] {
+  accent-color: var(--ink);
+}
+
+.register-summary {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+.register-summary h2 {
+  margin: 1rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4vw, 5rem);
+  font-weight: 400;
+}
+
+.register-summary p {
+  max-width: 48rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.25;
+}
+
+.register-summary .course-cta {
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .register-page {
+    width: min(100% - 2rem, 112rem);
+  }
+
+  .register-step,
+  .register-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .week-options,
+  .modality-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .week-options label {
+    border-left: 0;
+    border-top: 1px solid rgba(23, 32, 51, .18);
+  }
+
+  .register-summary .course-cta {
+    justify-self: start;
+  }
+}
+
+.register-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.register-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.register-back {
+  text-decoration: none;
+  font-size: .72rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(23, 32, 51, .65);
+}
+
+.register-back:hover {
+  color: var(--cobalt);
+}
+
+.summary-price {
+  text-align: right;
+}
+
+.summary-price span {
+  display: block;
+  margin-bottom: .8rem;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.summary-price strong {
+  display: block;
+  margin-bottom: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.day-count {
+  margin-top: 2rem;
+}
+
+.day-count label {
+  display: block;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.day-count select {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+.single-days {
+  display: none;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.register-page {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 4rem, 112rem);
+  margin: 0 auto;
+  padding: 2rem 0 8rem;
+}
+
+.register-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0rem;
+  margin-bottom: 4rem;
+}
+
+.register-logo img {
+  width: 120px;
+}
+
+.register-back {
+  text-decoration: none;
+  font-size: .72rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .65);
+}
+
+.register-hero {
+  max-width: 52rem;
+  margin-bottom: 5rem;
+}
+
+.register-eyebrow,
+.register-section-label span,
+.register-section-label em,
+.week-top span,
+.week-top small,
+.choice-grid span,
+.summary-label,
+.summary-total span,
+.register-summary-panel small,
+.form-grid label,
+.single-days p,
+.days-grid label {
+  font-size: .72rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .58);
+}
+
+.register-hero h1 {
+  margin: 1.2rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: .8;
+}
+
+.register-hero p {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.25;
+}
+
+.register-hero p span {
+  color: var(--coral);
+  font-style: italic;
+}
+
+.register-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 4rem;
+  align-items: start;
+}
+
+.register-row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 3rem;
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.register-section-label em {
+  display: block;
+  margin-top: .4rem;
+  font-style: italic;
+}
+
+.week-top {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1.4fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.week-top h2 {
+  margin: .4rem 0 0;
+  font-family: 'Cormorant Garamond', serif;
+font-size: clamp(1.1rem, 1.3vw, 1.6rem);
+font-weight: 400;
+}
+
+.week-top strong {
+  display: block;
+  margin: .2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .75rem;
+}
+
+.choice-grid label {
+  border: 1px solid rgba(23, 32, 51, .22);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.choice-grid strong {
+  display: block;
+  margin: .8rem 0 .6rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 1.5vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.8rem;
+}
+
+.single-days {
+  display: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.days-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: .8rem 0 1.3rem;
+}
+
+.days-grid label {
+  border: 1px solid rgba(23, 32, 51, .2);
+  padding: .8rem 1rem;
+  cursor: pointer;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.form-grid .full {
+  grid-column: span 2;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  margin-top: .8rem;
+  border: 1px solid rgba(23, 32, 51, .22);
+  background: transparent;
+  padding: .8rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--ink);
+}
+
+.form-grid textarea {
+  min-height: 7rem;
+}
+
+.register-summary-panel {
+  position: sticky;
+  top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.register-summary-panel h2 {
+  margin: 2rem 0 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 2vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+#summaryDetails {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.summary-line {
+  display: grid;
+  gap: .35rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgba(23, 32, 51, .15);
+}
+
+.summary-line:last-child {
+  border-bottom: 0;
+}
+
+.summary-line strong {
+  font-weight: 400;
+}
+
+.summary-line span {
+  color: rgba(23, 32, 51, .75);
+}
+
+.summary-line em {
+  font-family: 'Manrope', sans-serif;
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.summary-total {
+  margin: 1.5rem 0;
+}
+
+.summary-total strong {
+  display: block;
+  margin-top: .6rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.register-summary-panel .course-cta {
+  width: 100%;
+  text-align: center;
+}
+
+.register-summary-panel small {
+  display: block;
+  margin-top: 1rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--ink);
+}
+
+@media (max-width: 1100px) {
+  .register-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-summary-panel {
+    position: static;
+  }
+
+  .choice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .week-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .register-page {
+    width: min(100% - 2rem, 112rem);
+  }
+
+  .register-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .choice-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .full {
+    grid-column: auto;
+  }
+}
+
+.register-intro-en {
+  margin-top: 1.2rem !important;
+  max-width: 42rem;
+  color: var(--cobalt);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.5vw, 1.6rem) !important;
+  line-height: 1.25 !important;
+}
+
+.register-intro-en {
+  padding-left: 4rem;
+}
+
+.register-back {
+  white-space: nowrap;
+}
+
+.choice-grid label span,
+.week-top small,
+.summary-total span,
+.register-summary-panel small {
+  line-height: 1.35;
+}
+
+.form-grid label {
+  line-height: 1.35;
+}
+
+.registration-intro-en {
+  margin-top: 0.75rem;
+  margin-left: 2rem;
+  max-width: 60rem;
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  color: var(--cobalt);
+  opacity: 0.85;
+  padding-left: 4rem;
+}
+
+/* MOBILE FIXES */
+
+.pre-opening-intro h2,
+.registration-grid h2 {
+  font-size: clamp(3.4rem, 13vw, 6rem) !important;
+  line-height: .86 !important;
+  letter-spacing: -.055em !important;
+}
+
+/* botão inscrições mais acima */
+.registration-grid {
+  align-items: end;
+}
+
+.registration-action {
+  align-self: end;
+  transform: translateY(-5rem);
+}
+
+/* mobile */
+@media (max-width: 700px) {
+  .pre-opening-intro h2,
+  .registration-grid h2 {
+    font-size: clamp(3.4rem, 15vw, 5.4rem) !important;
+  }
+
+  /* esconder tabela programa em mobile */
+  .summer-program {
+    display: none;
+  }
+
+  /* botão inscrições volta ao normal no mobile */
+  .registration-action {
+    transform: none;
+    margin-top: 2rem;
+  }
+
+  /* sobre nós uma pessoa por linha */
+  .about-us {
+    width: min(100% - 2rem, 112rem);
+    margin-top: 6rem;
+    overflow: hidden;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 4rem;
+  }
+
+  .about-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .about-card h3 {
+    font-size: clamp(3rem, 14vw, 4.8rem);
+    word-break: normal;
+  }
+
+  .about-card p.pt,
+  .about-card p.en {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+    max-width: 100%;
+  }
+
+  .about-card p.en {
+    margin-left: 0;
+  }
+}
+
+.summer-registration .registration-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.summer-registration .registration-action {
+  text-align: right;
+  transform: translateY(-2rem);
+}
+
+.summer-registration .course-cta {
+  color: #fff;
+}
+
+.summer-registration .course-cta i {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .summer-registration .registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summer-registration .registration-action {
+    text-align: left;
+    transform: none;
+    margin-top: 2rem;
+  }
+}
+.course-cta:hover,
+.course-cta:hover i {
+  color: var(--cobalt) !important;
+}
+
+
+
+
+
+
+
+
+
