@@ -1326,7 +1326,13 @@ img {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
+}
+
+.registration-grid > div:first-child {
+  align-self: start;
+  position: sticky;
+  top: 3rem;
 }
 
 .registration-grid h2 {
@@ -2092,10 +2098,6 @@ input[type="checkbox"] {
     font-size: clamp(3.4rem, 15vw, 5.4rem) !important;
   }
 
-  /* esconder tabela programa em mobile */
-  .summer-program {
-    display: none;
-  }
 
   /* botão inscrições volta ao normal no mobile */
   .registration-action {
@@ -2188,8 +2190,307 @@ input[type="checkbox"] {
   opacity: 0.7;
 }
 
+.registration-faq {
+  margin-top: 0rem;
+  max-width: 62rem;
+}
+
+.faq-label {
+  margin: 0 0 1.5rem !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: .72rem !important;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(23, 32, 51, .55);
+}
+
+.faq-list {
+  border-top: 1px solid var(--border);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.1;
+  font-style: italic;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  float: right;
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  color: var(--cobalt);
+}
+
+.faq-list details[open] summary::after {
+  content: "–";
+}
+
+.faq-list p {
+  max-width: 48rem;
+  margin: 1rem 0 0 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 1.6vw, 1.55rem) !important;
+  line-height: 1.25 !important;
+}
+
+.faq-list p.en {
+  margin-left: 2rem !important;
+  color: var(--cobalt);
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .registration-faq {
+    margin-top: 3rem;
+    max-width: 100%;
+  }
+
+  .faq-list summary {
+    font-size: clamp(1.5rem, 7vw, 2.1rem);
+    padding-right: 2rem;
+  }
+
+  .faq-list p,
+  .faq-list p.en {
+    margin-left: 0 !important;
+    font-size: 1.2rem !important;
+  }
+}
+
+.faq-en {
+  display: block;
+  margin-top: .35rem;
+  margin-left: 1.5rem;
+  color: var(--cobalt);
+  font-style: italic;
+  font-size: .68em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@media (max-width: 700px) {
+  .faq-en {
+    margin-left: 0;
+    margin-top: .5rem;
+  }
+}
 
 
+@media (max-width: 700px) {
+  .course-feature {
+    display: block;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .course-summary {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .course-main h3 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+    line-height: .9;
+  }
+
+  .course-content {
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  .course-main > .pt {
+    margin-top: 2rem;
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .course-main > .en {
+    margin-left: 0;
+    font-size: clamp(1.2rem, 5.5vw, 1.6rem);
+  }
+
+  .teacher-row {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .course-info {
+    margin-top: 2rem;
+    padding-top: 0;
+  }
+
+  .course-info dl div {
+    grid-template-columns: 1fr !important;
+    gap: .5rem;
+    padding: 1rem 0 !important;
+  }
+
+  .course-weeks {
+    grid-template-columns: 1fr !important;
+  }
+
+  .week-card {
+    min-width: 0;
+  }
+
+  .course-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* PROGRAMA — MOBILE */
+
+@media (max-width: 700px) {
+  .summer-program {
+    display: block !important;
+    margin-top: 4rem;
+  }
+
+  .program-grid {
+    display: block;
+  }
+
+  .program-grid > div {
+    border-left: 0 !important;
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .program-grid > div:first-child {
+    display: none;
+  }
+
+  .program-week {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem !important;
+    border-top: 1px solid var(--border);
+  }
+
+  .program-week span {
+    margin-bottom: .6rem;
+  }
+
+  .program-week strong {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .program-time {
+    margin-top: 1.5rem;
+    padding-top: 1.3rem !important;
+    border-top: 1px solid rgba(23, 32, 51, .18);
+  }
+
+  .program-time span {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .program-time strong {
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+
+  .program-item {
+    padding: 1.2rem 0 1.6rem !important;
+    border-bottom: 1px solid rgba(23, 32, 51, .18) !important;
+  }
+
+  .program-item strong {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: .95;
+  }
+
+  .program-item span {
+    margin-top: .8rem;
+  }
+}
+
+
+.program-mobile {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .program-grid {
+    display: none;
+  }
+
+  .program-mobile {
+    display: block;
+  }
+
+  .mobile-week {
+    border-top: 1px solid var(--border);
+    padding: 1.6rem 0 2rem;
+  }
+
+  .mobile-week-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-week-head span,
+  .mobile-session span,
+  .mobile-session small {
+    font-size: .66rem;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: rgba(23, 32, 51, .55);
+  }
+
+  .mobile-week-head strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 9vw, 3rem);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .mobile-session {
+    border-top: 1px solid rgba(23, 32, 51, .16);
+    padding: 1.2rem 0;
+  }
+
+  .mobile-session strong {
+    display: block;
+    margin-top: .7rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 9vw, 3rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: .95;
+  }
+
+  .mobile-session strong.guest {
+    color: var(--sagedark);
+  }
+
+  .mobile-session strong.main {
+    color: var(--cobalt);
+  }
+
+  .mobile-session small {
+    display: block;
+    margin-top: .7rem;
+  }
+}
 
 
 
