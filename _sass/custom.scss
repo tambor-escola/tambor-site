@@ -2713,9 +2713,7 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 800px) {
-  .register-page {
-    padding: 1rem;
-  }
+  
 
   .register-topbar {
     display: flex;
@@ -2733,13 +2731,13 @@ input[type="checkbox"] {
   }
 
   .register-hero h1 {
-    font-size: 2.6rem;
+    font-size: 3.5rem;
     line-height: 1;
   }
 
   .register-hero p,
   .register-hero .register-intro-en {
-    font-size: 16px !important;
+    font-size: 20px !important;
     line-height: 1.4;
   }
 
@@ -2761,6 +2759,7 @@ input[type="checkbox"] {
   .week-top {
     display: block;
   }
+
 
   .week-top > div {
     margin-bottom: 1.5rem;
@@ -2807,8 +2806,8 @@ input[type="checkbox"] {
 
   .register-conditions p,
   .register-conditions .en {
-    font-size: 15px !important;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.4;
   }
 
   .register-summary-panel {
