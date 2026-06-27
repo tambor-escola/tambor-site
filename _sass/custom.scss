@@ -443,7 +443,7 @@ img {
 /* ACTIVITIES */
 
 .activity-list {
-  margin-top: 4rem;
+  margin-top: 0rem;
   border-top: none;
 }
 
@@ -1123,7 +1123,7 @@ img {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 3rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
 }
 
 .course-weeks-side {
@@ -1420,8 +1420,8 @@ img {
 
 .course-feature + .course-feature {
   border-top: 1px solid var(--border);
-  padding-top: 2rem;
-  margin-top: 2rem;
+  padding-top: 0rem;
+  margin-top: 0rem;
 }
 
 h3.convidado {
@@ -1762,9 +1762,10 @@ input[type="radio"] {
   color: rgba(23, 32, 51, .65);
 }
 
-.register-hero {
-  max-width: 52rem;
-  margin-bottom: 5rem;
+.register-hero{
+    width:100%;
+    max-width:none;
+    margin-bottom:5rem;
 }
 
 .register-eyebrow,
@@ -2497,7 +2498,394 @@ input[type="checkbox"] {
 }
 
 
+.course-location {
+  margin: 0.75rem 0 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.hero-note {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.course-static,
+.course-static *,
+.course-summary-static,
+.course-summary-static * {
+  cursor: default !important;
+}
+
+.course-static .course-cta,
+.course-static .course-cta *,
+.hero-note a,
+.hero-note a * {
+  cursor: pointer !important;
+}
+
+.course-image {
+  width: 100%;
+  max-width: 34rem;
+}
+
+.course-image img {
+  width: 80%;
+  object-fit: cover;
+}
+
+.price-note {
+  font-size: 0.60em;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+
+  .course-image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .course-image img {
+    width: 100%;
+    display: block;
+  }
+
+}
+
+.registration-info .info-block {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.registration-info .info-block:last-of-type {
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.registration-info .info-block p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.registration-info .en {
+  margin-top: 2rem;
+  margin-left: 4rem;
+  max-width: 42rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--cobalt);
+}
+
+.life-drawing-choice-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.register-conditions p {
+  margin: 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.25;
+}
+
+.register-conditions .en {
+  margin-top: 2rem;
+  color: var(--cobalt);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.4vw, 1.45rem);
+}
+
+@media (max-width: 700px) {
+  .life-drawing-choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.register-hero p,
+.register-hero {
+  font-size: 1.3rem;   /* ~15px */
+  line-height: 1.3;
+}
+
+.register-intro-en {
+  font-size: 1.2rem!important;
+  line-height: 1.5 !important;
+}
+
+.register-hero h1 {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.register-conditions p{
+  font-size: 1.3rem !important;   /* ~15px */
+  line-height: 1.7;
+}
+
+.register-conditions p {
+  margin-bottom: 0.2rem;
+}
+
+.register-conditions .en {
+  margin-top: 2rem;
+  font-size: 1.2rem !important;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.7rem 3rem 0.7rem 1rem;
+  height: 3.2rem;
+
+  border: 1px solid rgba(20,30,45,.18);
+  background: #fff;
+  appearance: auto;
+
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+}
 
 
 
+.form-grid label select {
+  margin-top: 0.8rem;
+}
 
+.checkbox-field {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.checkbox-field input[type="checkbox"] {
+  margin: 0;
+  position: relative;
+  top: 1px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 2.5rem;
+}
+
+.form-grid label.full {
+  grid-column: auto;
+}
+
+.form-grid label.wide {
+  grid-column: 1 / -1;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-field {
+  grid-column: 1 / -1;
+  display: grid !important;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+}
+
+.form-select {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .register-page {
+    padding: 1rem;
+  }
+
+  .register-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .register-logo img {
+    max-width: 110px;
+  }
+
+  .register-hero {
+    padding: 0;
+  }
+
+  .register-hero h1 {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+  .register-hero p,
+  .register-hero .register-intro-en {
+    font-size: 16px !important;
+    line-height: 1.4;
+  }
+
+  .register-main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .register-row {
+    display: block;
+    padding: 2rem 0;
+  }
+
+  .register-section-label {
+    margin-bottom: 1.5rem;
+  }
+
+  .week-top {
+    display: block;
+  }
+
+  .week-top > div {
+    margin-bottom: 1.5rem;
+  }
+
+  .choice-grid,
+  .life-drawing-choice-grid,
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-grid label,
+  .form-grid label.full,
+  .form-grid label.wide {
+    grid-column: 1 / -1;
+  }
+
+  .form-grid input,
+  .form-grid textarea,
+  .form-select {
+    width: 100%;
+    min-height: 52px;
+    font-size: 16px;
+  }
+
+  .form-grid textarea {
+    min-height: 130px;
+  }
+
+  .checkbox-field {
+    display: grid !important;
+    grid-template-columns: 22px 1fr;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .checkbox-field input[type="checkbox"] {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .register-conditions p,
+  .register-conditions .en {
+    font-size: 15px !important;
+    line-height: 1.7;
+  }
+
+  .register-summary-panel {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .course-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+.register-hero-with-image{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 600px;
+    gap:5rem;
+    align-items:start;
+    width:100%;
+}
+
+.register-hero-image {
+  margin: 0;
+}
+
+.register-hero-image img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 100px) {
+  .register-hero-with-image {
+    display: block;
+  }
+
+  .register-hero-image {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .register-hero-with-image{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+  }
+
+  .register-hero-content{
+    order:1;
+  }
+
+  .register-hero-image{
+    order:2;
+    display:block;
+    width:100%;
+    margin:0;
+  }
+
+  .register-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    margin:0 auto;
+    display:block;
+    object-fit:cover;
+  }
+
+}

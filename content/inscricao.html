@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Inscrições — Atividades de Verão
+title: Inscrições — Desenho de Modelo Vivo
 permalink: /inscricao/
 ---
 
@@ -14,328 +14,90 @@ permalink: /inscricao/
     <a href="/" class="register-back">← Voltar / <i>Back</i></a>
   </header>
 
-  <section class="register-hero">
-    <h1><i>Inscrições Julho 2026</i></h1>
+  <section class="register-hero register-hero-with-image">
+    <div class="register-hero-content">
+      <h1><i>INSCRIÇÃO / <span style="font-size: 3rem;">REGISTER</span></i></h1>
 
-    <p>
-      Escolha a semana e a modalidade pretendida. Cada semana tem uma atividade de manhã e outra à tarde.
-      O pagamento é feito <span>por transferência bancária</span>.
-    </p>
+      <p class="pt">
+        Desenhar é uma oportunidade para abrandar o ritmo da semana, reduzir a ansiedade e simplesmente desfrutar de um momento de observação e criação.
+        <br><br>
+        <strong>Atenção:</strong> Esta não é uma aula orientada. É uma sessão de prática livre com modelo vivo, pensada para todos os níveis de experiência. O modelo alternará entre poses curtas e longas ao longo da sessão.
+      </p>
 
-     <p class="register-intro-en">
-      Choose your preferred week and format. Each week includes one morning activity and one afternoon activity.
-      Payment is made on site, on the first day.
-    </p>
+      <p class="register-intro-en en">
+        Drawing is an opportunity to slow down, observe and create. It is a chance to step away from the pace of everyday life and simply enjoy the process of drawing.
+        <br><br>
+        <strong>Please note:</strong> This is not a guided class. It is an open life drawing session suitable for all experience levels. The model will alternate between short and long poses throughout the evening.
+      </p>
+    </div>
+
+    <figure class="register-hero-image">
+      <img src="/assets/images/modelo-vivo.png" alt="Desenho de Modelo Vivo">
+    </figure>
   </section>
 
   <form
     class="register-form"
-    action="https://docs.google.com/forms/d/e/1FAIpQLScr6rx7ySuNfLDQl8GZ5o6OC5sisQAAKHHI2pEREuS7B4bb3A/formResponse"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSdLC56AWthjOpETQf3TdYK2-789pq5P9EqpstI8FzhHfrXInQ/formResponse"
     method="POST"
     target="hidden_iframe"
     onsubmit="return submitRegisterForm()"
   >
+    <input type="hidden" id="googleSession" name="entry.925807030">
+    <input type="hidden" id="googleTotal" name="entry.158825792">
 
     <div class="register-main-grid">
 
       <div class="register-main">
 
-        <!-- SEMANA I -->
-        <section class="register-row week-register"
-          data-week="Semana I"
-          data-dates="6–10 Julho"
-          data-morning="Guest Artist Workshop I"
-          data-afternoon="Criaturas Fantásticas"
-          data-morning-price="85"
-          data-afternoon-price="95"
-          data-day-price="30">
-
+        <section class="register-row week-register">
           <div class="register-section-label">
-            <span>Semana 1</span>
-            <em>/ Week 1</em>
+            <span>Sessão</span>
+            <em>/ Session</em>
           </div>
 
           <div class="register-section-content">
             <div class="week-top">
               <div>
-                <span>6–10 Julho</span>
-                <h2><i>Semana 1</i></h2>
+                <span>Julho 2026</span>
+                <h2><i>Desenho de Modelo Vivo</i></h2>
+                <small><i>Life Drawing</i></small>
               </div>
 
               <div>
-                <span>Manhã · 10h00–12h30</span>
-                <h2><i>Guest Artist Workshop I</i></h2>
-                <small>85€ semana</small>
+                <span>Quartas · 18h30–20h30</span>
+                <h2><i>Galeria Monumental</i></h2>
+                <small><i>Wednesdays · 18:30–20:30</i></small>
               </div>
 
               <div>
-                <span>Tarde · 14h00–16h30</span>
-                <h2><i>Criaturas Fantásticas</i></h2></strong>
-                <small>95€ semana</small>
+                <span>Preço / <i>Price</i></span>
+                <h2><i>16€ até segunda-feira · 
+                19€ depois / €16 until Monday · €19 afterwards</i></small>
               </div>
             </div>
 
-            <div class="choice-grid">
+            <div class="choice-grid life-drawing-choice-grid">
               <label>
-                <input type="radio" name="week_1_modality" value="Não quero esta semana" data-type="none" checked>
-                <strong>Não quero esta semana</strong>
-                <span>Sem inscrição</span>
+                <input type="checkbox" name="session_date[]" value="1 Julho 2026" data-price="16">
+                <strong>1 Julho</strong>
+                <span>Quarta · 18h30–20h30</span>
+                <span><i>Wednesday · 18:30–20:30</i></span>
               </label>
 
               <label>
-                <input type="radio" name="week_1_modality" value="Semana completa" data-type="full">
-                <strong>Semana completa</strong>
-                <span>Manhã + tarde · 180€</span>
+                <input type="checkbox" name="session_date[]" value="22 Julho 2026" data-price="16">
+                <strong>22 Julho</strong>
+                <span>Quarta · 18h30–20h30</span>
+                <span><i>Wednesday · 18:30–20:30</i></span>
               </label>
 
               <label>
-                <input type="radio" name="week_1_modality" value="Só manhãs" data-type="morning">
-                <strong>Só manhãs</strong>
-                <span>Guest Artist Workshop I · 85€</span>
+                <input type="checkbox" name="session_date[]" value="29 Julho 2026" data-price="16">
+                <strong>29 Julho</strong>
+                <span>Quarta · 18h30–20h30</span>
+                <span><i>Wednesday · 18:30–20:30</i></span>
               </label>
-
-              <label>
-                <input type="radio" name="week_1_modality" value="Só tardes" data-type="afternoon">
-                <strong>Só tardes</strong>
-                <span>Criaturas Fantásticas · 95€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_1_modality" value="Dias avulsos" data-type="days">
-                <strong>Dias avulsos</strong>
-                <span>30€ por período</span>
-              </label>
-            </div>
-
-            <div class="single-days">
-              <p>Dias avulsos</p>
-
-              <div class="days-grid day-options">
-                <label><input type="checkbox" name="week_1_days[]" value="Seg 6 Jul">Seg · 6 Jul</label>
-                <label><input type="checkbox" name="week_1_days[]" value="Ter 7 Jul">Ter · 7 Jul</label>
-                <label><input type="checkbox" name="week_1_days[]" value="Qua 8 Jul">Qua · 8 Jul</label>
-                <label><input type="checkbox" name="week_1_days[]" value="Qui 9 Jul">Qui · 9 Jul</label>
-                <label><input type="checkbox" name="week_1_days[]" value="Sex 10 Jul">Sex · 10 Jul</label>
-              </div>
-
-              <p>Período</p>
-
-              <div class="days-grid period-options">
-                <label>
-                  <input type="radio" name="week_1_period" value="Manhã" data-period-count="1">
-                  Manhã
-                </label>
-
-                <label>
-                  <input type="radio" name="week_1_period" value="Tarde" data-period-count="1">
-                  Tarde
-                </label>
-
-                <label>
-                  <input type="radio" name="week_1_period" value="Dia inteiro" data-period-count="2">
-                  Dia inteiro
-                </label>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SEMANA II -->
-        <section class="register-row week-register"
-          data-week="Semana II"
-          data-dates="13–17 Julho"
-          data-morning="Guest Artist Workshop II"
-          data-afternoon="Criaturas Fantásticas"
-          data-morning-price="85"
-          data-afternoon-price="95"
-          data-day-price="30">
-
-          <div class="register-section-label">
-            <span>Semana 2</span>
-            <em>/ Week 2</em>
-          </div>
-
-          <div class="register-section-content">
-            <div class="week-top">
-              <div>
-                <span>13–17 Julho</span>
-                <h2><i>Semana 2</i></h2>
-              </div>
-
-              <div>
-                <span>Manhã · 10h00–12h30</span>
-                <h2><i>Guest Artist Workshop II</i></h2>
-                <small>85€ semana</small>
-              </div>
-
-              <div>
-                <span>Tarde · 14h00–16h30</span>
-                <h2><i>Criaturas Fantásticas</i></h2>
-                <small>95€ semana</small>
-              </div>
-            </div>
-
-            <div class="choice-grid">
-              <label>
-                <input type="radio" name="week_2_modality" value="Não quero esta semana" data-type="none" checked>
-                <strong>Não quero esta semana</strong>
-                <span>Sem inscrição</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_2_modality" value="Semana completa" data-type="full">
-                <strong>Semana completa</strong>
-                <span>Manhã + tarde · 180€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_2_modality" value="Só manhãs" data-type="morning">
-                <strong>Só manhãs</strong>
-                <span>Guest Artist Workshop II · 85€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_2_modality" value="Só tardes" data-type="afternoon">
-                <strong>Só tardes</strong>
-                <span>Criaturas Fantásticas · 95€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_2_modality" value="Dias avulsos" data-type="days">
-                <strong>Dias avulsos</strong>
-                <span>30€ por período</span>
-              </label>
-            </div>
-
-            <div class="single-days">
-              <p>Dias avulsos</p>
-
-              <div class="days-grid day-options">
-                <label><input type="checkbox" name="week_2_days[]" value="Seg 13 Jul">Seg · 13 Jul</label>
-                <label><input type="checkbox" name="week_2_days[]" value="Ter 14 Jul">Ter · 14 Jul</label>
-                <label><input type="checkbox" name="week_2_days[]" value="Qua 15 Jul">Qua · 15 Jul</label>
-                <label><input type="checkbox" name="week_2_days[]" value="Qui 16 Jul">Qui · 16 Jul</label>
-                <label><input type="checkbox" name="week_2_days[]" value="Sex 17 Jul">Sex · 17 Jul</label>
-              </div>
-
-              <p>Período</p>
-
-              <div class="days-grid period-options">
-                <label>
-                  <input type="radio" name="week_2_period" value="Manhã" data-period-count="1">
-                  Manhã
-                </label>
-
-                <label>
-                  <input type="radio" name="week_2_period" value="Tarde" data-period-count="1">
-                  Tarde
-                </label>
-
-                <label>
-                  <input type="radio" name="week_2_period" value="Dia inteiro" data-period-count="2">
-                  Dia inteiro
-                </label>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SEMANA III -->
-        <section class="register-row week-register"
-          data-week="Semana III"
-          data-dates="20–24 Julho"
-          data-morning="Guest Artist Workshop III"
-          data-afternoon="Criaturas Fantásticas"
-          data-morning-price="85"
-          data-afternoon-price="95"
-          data-day-price="30">
-
-          <div class="register-section-label">
-            <span>Semana 3</span>
-            <em>/ Week 3</em>
-          </div>
-
-          <div class="register-section-content">
-            <div class="week-top">
-              <div>
-                <span>20–24 Julho</span>
-                <h2><i>Semana III</i></h2>
-              </div>
-
-              <div>
-                <span>Manhã · 10h00–12h30</span>
-                <h2><i>Guest Artist Workshop III</i></h2>
-                <small>85€ semana</small>
-              </div>
-
-              <div>
-                <span>Tarde · 14h00–16h30</span>
-                <h2><i>Criaturas Fantásticas</i></h2>
-                <small>95€ semana</small>
-              </div>
-            </div>
-
-            <div class="choice-grid">
-              <label>
-                <input type="radio" name="week_3_modality" value="Não quero esta semana" data-type="none" checked>
-                <strong>Não quero esta semana</strong>
-                <span>Sem inscrição</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_3_modality" value="Semana completa" data-type="full">
-                <strong>Semana completa</strong>
-                <span>Manhã + tarde · 180€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_3_modality" value="Só manhãs" data-type="morning">
-                <strong>Só manhãs</strong>
-                <span>Guest Artist Workshop III · 85€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_3_modality" value="Só tardes" data-type="afternoon">
-                <strong>Só tardes</strong>
-                <span>Criaturas Fantásticas · 95€</span>
-              </label>
-
-              <label>
-                <input type="radio" name="week_3_modality" value="Dias avulsos" data-type="days">
-                <strong>Dias avulsos</strong>
-                <span>30€ por período</span>
-              </label>
-            </div>
-
-            <div class="single-days">
-              <p>Dias avulsos</p>
-
-              <div class="days-grid day-options">
-                <label><input type="checkbox" name="week_3_days[]" value="Seg 20 Jul">Seg · 20 Jul</label>
-                <label><input type="checkbox" name="week_3_days[]" value="Ter 21 Jul">Ter · 21 Jul</label>
-                <label><input type="checkbox" name="week_3_days[]" value="Qua 22 Jul">Qua · 22 Jul</label>
-                <label><input type="checkbox" name="week_3_days[]" value="Qui 23 Jul">Qui · 23 Jul</label>
-                <label><input type="checkbox" name="week_3_days[]" value="Sex 24 Jul">Sex · 24 Jul</label>
-              </div>
-
-              <p>Período</p>
-
-              <div class="days-grid period-options">
-                <label>
-                  <input type="radio" name="week_3_period" value="Manhã" data-period-count="1">
-                  Manhã
-                </label>
-
-                <label>
-                  <input type="radio" name="week_3_period" value="Tarde" data-period-count="1">
-                  Tarde
-                </label>
-
-                <label>
-                  <input type="radio" name="week_3_period" value="Dia inteiro" data-period-count="2">
-                  Dia inteiro
-                </label>
-              </div>
             </div>
           </div>
         </section>
@@ -350,35 +112,102 @@ permalink: /inscricao/
           <div class="register-section-content">
             <div class="form-grid">
               <label>
-                Nome completo *
-                <input type="text" name="entry.1744001245" required>
+                <span class="pt">Nome completo *</span>
+                <span class="en">Full name *</span>
+                <input type="text" name="entry.976409610" required>
               </label>
 
               <label>
-                Idade *
-                <input type="number" name="entry.996555025" required>
+                <span class="pt">Email *</span>
+                <span class="en">Email *</span>
+                <input type="email" name="entry.1508027689" required>
               </label>
 
               <label>
-                Encarregado de educação
-                <input type="text" name="entry.2091397138">
+                <span class="pt">Telefone *</span>
+                <span class="en">Phone *</span>
+                <input type="tel" name="entry.341988447" required>
               </label>
 
               <label>
-                Telefone *
-                <input type="tel" name="entry.717184321" required>
+                <span class="pt">NIF</span>
+                <span class="en">Tax number</span>
+                <input type="text" name="entry.241994501">
               </label>
 
               <label class="full">
-                Email *
-                <input type="email" name="entry.448957181" required>
+                <span class="pt">Morada</span>
+                <span class="en">Address</span>
+                <input type="text" name="entry.439117335">
               </label>
 
-              <label class="full">
-                Notas · alergias · materiais · observações
-                <textarea name="entry.753027577"></textarea>
+              <label>
+                <span class="pt">Como conheceu estas sessões?</span>
+                <span class="en">How did you hear about these sessions?</span>
+                <select name="entry.1072694845" class="form-select">
+                  <option value="">Escolher / Select</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Galeria Monumental">Galeria Monumental</option>
+                  <option value="Amigos">Amigos / Friends</option>
+                  <option value="Newsletter">Newsletter</option>
+                  <option value="Other">Outro / Other</option>
+                </select>
+              </label>
+
+              <label class="wide">
+                <span class="pt">Observações</span>
+                <span class="en">Notes</span>
+                <textarea name="entry.1563511791"></textarea>
+              </label>
+
+              <label class="full checkbox-field">
+                <input
+                  type="checkbox"
+                  name="entry.1332680783"
+                  value="Gostaria de receber novidades sobre cursos e outras atividades da Tambor por email">
+                <span>
+                  Quero receber novidades da Tambor por email<br>
+                  <i>I would like to receive Tambor news by email</i>
+                </span>
+              </label>
+
+              <label class="full checkbox-field">
+                <input
+                  type="checkbox"
+                  name="entry.1332680783"
+                  value="Li e aceito as condições de inscrição"
+                  required>
+                <span>
+                  Li e aceito as condições de inscrição *<br>
+                  <i>I have read and accept the registration terms *</i>
+                </span>
               </label>
             </div>
+          </div>
+        </section>
+
+        <section class="register-row">
+          <div class="register-section-label">
+            <span>Condições</span>
+            <em>/ Terms</em>
+          </div>
+
+          <div class="register-section-content register-conditions">
+            <p>A inscrição só fica confirmada após receção do comprovativo de pagamento</p>
+            <p>Os materiais não estão incluídos, apenas serão disponibilizadas pranchetas</p>
+            <p>Não fazemos reposição de aulas</p>
+            <p>Cancelamentos não são reembolsáveis, apenas em caso de cancelamento da sessão</p>
+            <p>A sessão poderá ser cancelada caso não haja um mínimo de 8 participantes</p>
+            <p>Haverá um pequeno intervalo a meio da sessão, o bar da Galeria Monumental estará aberto para quem desejar adquirir bebidas ou snacks</p>
+
+            <p class="en">
+              Registration is only confirmed after proof of payment has been received<br>
+              Materials are not included. Drawing boards will be available<br>
+              We do not offer class replacements<br>
+              Cancellations are not refundable, except in case of session cancellation<br>
+              The session may be cancelled if the minimum of 8 participants is not reached<br>
+              There will be a short break halfway through the session, drinks and snacks will be available for purchase at the gallery bar
+            </p>
           </div>
         </section>
 
@@ -388,25 +217,29 @@ permalink: /inscricao/
       <aside class="register-summary-panel">
         <p class="summary-label">Resumo / <i>Summary</i></p>
 
-        <h2 id="summaryTitle"><i>Escolha as semanas pretendidas</i></h2>
+        <h2 id="summaryTitle">
+          <span class="pt"><i>Escolha uma sessão</i></span><br>
+          <span class="en"><i>Choose a session</i></span>
+        </h2>
 
         <div id="summaryDetails">
-          Escolha pelo menos uma semana e modalidade.
+          <span class="pt">Escolha uma das datas disponíveis.</span><br>
+          <span class="en">Choose one of the available dates.</span>
         </div>
 
         <div class="summary-total">
-          <span>Total a pagar no local</span>
+          <span>Total</span>
           <strong id="summaryPrice">—</strong>
         </div>
 
-        <input type="hidden" name="entry.925582194" id="googleSummary">
-        <input type="hidden" name="entry.2107765213" id="googleTotal">
+        <small id="summarySmall">
+          Pagamento por transferência bancária · confirmação após envio do comprovativo<br>
+          <i>Payment by bank transfer · confirmation after proof of payment is sent</i>
+        </small>
 
         <button type="submit" class="course-cta">
           Inscrever / <i>Register</i> →
         </button>
-
-        <small id="summarySmall">Pagamento por transferência bancária · confirmação após pagamento</small>
       </aside>
 
     </div>
@@ -418,190 +251,82 @@ permalink: /inscricao/
 </main>
 
 <script>
-  function toggleDaySections() {
-    document.querySelectorAll('.week-register').forEach(function(section) {
-      const daysSection = section.querySelector('.single-days');
-      const selected = section.querySelector('input[type="radio"]:checked');
-
-      if (!daysSection) return;
-
-      if (selected && selected.dataset.type === 'days') {
-        daysSection.style.display = 'block';
-      } else {
-        daysSection.style.display = 'none';
-
-        daysSection.querySelectorAll('input[type="checkbox"]').forEach(function(box) {
-          box.checked = false;
-        });
-
-        daysSection.querySelectorAll('input[type="radio"]').forEach(function(radio) {
-          radio.checked = false;
-        });
-      }
-    });
-  }
-
   function updateRegisterSummary() {
-    const weekSections = Array.from(document.querySelectorAll('.week-register'));
+    const selectedSessions = Array.from(
+      document.querySelectorAll('input[name="session_date[]"]:checked')
+    );
+
     const summaryTitle = document.getElementById('summaryTitle');
     const summaryDetails = document.getElementById('summaryDetails');
     const summarySmall = document.getElementById('summarySmall');
     const summaryPrice = document.getElementById('summaryPrice');
-    const googleSummary = document.getElementById('googleSummary');
+    const googleSession = document.getElementById('googleSession');
     const googleTotal = document.getElementById('googleTotal');
 
-    let total = 0;
-    const lines = [];
-
-    weekSections.forEach(function(section) {
-      const week = section.dataset.week;
-      const dates = section.dataset.dates;
-      const morning = section.dataset.morning;
-      const afternoon = section.dataset.afternoon;
-      const morningPrice = Number(section.dataset.morningPrice);
-      const afternoonPrice = Number(section.dataset.afternoonPrice);
-      const dayPrice = Number(section.dataset.dayPrice);
-
-      const modality = section.querySelector('input[type="radio"]:checked');
-      if (!modality || modality.dataset.type === 'none') return;
-
-      let price = 0;
-      let text = '';
-
-      if (modality.dataset.type === 'full') {
-        price = morningPrice + afternoonPrice;
-        text = 'Semana completa · ' + morning + ' + ' + afternoon;
-      }
-
-      if (modality.dataset.type === 'morning') {
-        price = morningPrice;
-        text = 'Só manhãs · ' + morning;
-      }
-
-      if (modality.dataset.type === 'afternoon') {
-        price = afternoonPrice;
-        text = 'Só tardes · ' + afternoon;
-      }
-
-      if (modality.dataset.type === 'days') {
-        const daysSection = section.querySelector('.single-days');
-
-        const days = Array.from(daysSection.querySelectorAll('.day-options input:checked'));
-        const period = daysSection.querySelector('.period-options input:checked');
-
-        const dayCount = days.length;
-        const periodCount = period ? Number(period.dataset.periodCount) : 0;
-
-        price = dayCount * periodCount * dayPrice;
-
-        const dayText = days.map(function(day) {
-          return day.value;
-        }).join(', ') || 'sem dias escolhidos';
-
-        const periodText = period ? period.value : 'sem período escolhido';
-
-        text = 'Dias avulsos · ' + dayText + ' · ' + periodText;
-      }
-
-      total += price;
-
-      lines.push({
-        week: week,
-        dates: dates,
-        text: text,
-        price: price
-      });
-    });
-
-    if (!lines.length) {
-      summaryTitle.innerHTML = '<i>Escolha as semanas pretendidas</i>';
-      summaryDetails.textContent = 'Escolha pelo menos uma semana e modalidade.';
-      summarySmall.textContent = 'Pagamento por transferência bancária';
+    if (!selectedSessions.length) {
+      summaryTitle.innerHTML = '<span class="pt"><i>Escolha uma ou mais sessões / </i></span><span class="en" style="font-size: 1.7rem;"><i>Choose one or more sessions</i></span>';
+      summaryDetails.innerHTML = '<span class="pt">Escolha uma das datas disponíveis.</span><br><span class="en">Choose one of the available dates.</span>';
+      summarySmall.innerHTML = 'Pagamento por transferência bancária · confirmação após envio do comprovativo<br><i>Payment by bank transfer · confirmation after proof of payment is sent</i>';
       summaryPrice.textContent = '—';
-
-      googleSummary.value = '';
+      googleSession.value = '';
       googleTotal.value = '';
       return;
     }
 
-    summaryTitle.innerHTML = '<i>Pedido de inscrição</i>';
+    let total = 0;
 
-    summaryDetails.innerHTML = lines.map(function(line) {
+    summaryTitle.innerHTML = '<span class="pt"><i>Pedido de inscrição / </i></span><span class="en" style="font-size: 1.7rem;"><i>Registration request</i></span>';
+
+    summaryDetails.innerHTML = selectedSessions.map(function(session) {
+      const price = Number(session.dataset.price || 16);
+      total += price;
+
       return '<div class="summary-line">' +
-        '<strong>' + line.week + ' · ' + line.dates + '</strong>' +
-        '<span>' + line.text + '</span>' +
-        '<em>' + line.price + '€</em>' +
+        '<strong>Desenho de Modelo Vivo / Life Drawing</strong>' +
+        '<span>' + session.value + ' · Galeria Monumental · 18h30–20h30</span>' +
+        '<em>' + price + '€</em>' +
       '</div>';
     }).join('');
 
-    summarySmall.textContent = total + '€ · pagamento por transferência bancária';
     summaryPrice.textContent = total + '€';
+    summarySmall.innerHTML = total + '€ · pagamento por transferência bancária<br><i>' + total + '€ · payment by bank transfer</i>';
 
-    googleSummary.value = lines.map(function(line) {
-      return line.week + ' (' + line.dates + ') - ' + line.text + ' - ' + line.price + '€';
-    }).join(' | ');
+    googleSession.value = selectedSessions.map(function(session) {
+      return session.value;
+    }).join(', ');
 
     googleTotal.value = total + '€';
   }
 
   function validateRegisterForm() {
-    const weeks = document.querySelectorAll('.week-register');
-    let hasRegistration = false;
+    const selectedSessions = document.querySelectorAll('input[name="session_date[]"]:checked');
 
-    for (const section of weeks) {
-      const modality = section.querySelector('input[type="radio"]:checked');
-
-      if (modality && modality.dataset.type !== 'none') {
-        hasRegistration = true;
-      }
-
-      if (modality && modality.dataset.type === 'days') {
-        const days = section.querySelectorAll('.day-options input:checked');
-        const period = section.querySelector('.period-options input:checked');
-
-        if (days.length === 0) {
-          alert(
-  'Por favor escolha pelo menos um dia para os dias avulsos.\n\n' +
-  'Please select at least one day for single-day registrations.'
-);
-          return false;
-        }
-
-        if (!period) {
-          alert(
-  'Por favor escolha Manhã, Tarde ou Dia inteiro para os dias avulsos.\n\n' +
-  'Please choose Morning, Afternoon or Full Day for single-day registrations.'
-);
-          return false;
-        }
-      }
-    }
-
-    if (!hasRegistration) {
+    if (!selectedSessions.length) {
       alert(
-  'Por favor escolha pelo menos uma semana ou modalidade.\n\n' +
-  'Please select at least one week or registration option.'
-);
+        'Por favor escolha pelo menos uma sessão.\n\n' +
+        'Please select at least one session.'
+      );
       return false;
     }
 
     return true;
   }
 
-  function updateRegisterPage() {
-    toggleDaySections();
-    updateRegisterSummary();
-  }
+function showSuccessMessage() {
+  setTimeout(function () {
 
-  function showSuccessMessage() {
-    setTimeout(function() {
-      alert(
-  'Obrigada pela inscrição!\n\n' +
-  'Vai receber um email com os dados para pagamento. A vaga só fica confirmada após transferência bancária.\n\n' +
-  'Thank you for your registration. You will receive payment instructions by email. Your place will only be confirmed after payment.'
-);
-    }, 500);
-  }
+    alert(
+      'Obrigada pela sua inscrição!\n\n' +
+      'Receberá dentro de momentos um email com os dados para pagamento por transferência bancária. A sua inscrição só ficará confirmada após receção do comprovativo de pagamento.\n\n' +
+
+      'Thank you for your registration!\n\n' +
+      'You will shortly receive an email with the bank transfer details. Your registration will only be confirmed after proof of payment has been received.'
+    );
+
+    window.location.replace(window.location.pathname);
+
+  }, 500);
+}
 
   function submitRegisterForm() {
     updateRegisterSummary();
@@ -614,9 +339,9 @@ permalink: /inscricao/
     return true;
   }
 
-  document.querySelectorAll('.week-register input').forEach(function(input) {
-    input.addEventListener('change', updateRegisterPage);
+  document.querySelectorAll('input[name="session_date[]"]').forEach(function(input) {
+    input.addEventListener('change', updateRegisterSummary);
   });
 
-  updateRegisterPage();
+  updateRegisterSummary();
 </script>
