@@ -78,29 +78,48 @@ permalink: /inscricao/
             </div>
 
             <div class="choice-grid life-drawing-choice-grid">
-              <label>
-                <input type="checkbox" name="session_date[]" value="1 Julho 2026" data-price="16">
-                <strong>1 Julho</strong>
-                <span>Quarta · 18h30–20h30</span>
-                <span><i>Wednesday · 18:30–20:30</i></span>
-              </label>
+  <label>
+    <input
+      type="checkbox"
+      name="session_date[]"
+      value="1 Julho 2026"
+      data-early-price="16"
+      data-late-price="19"
+      data-early-deadline="2026-06-29T23:59:59">
+    <strong>1 Julho</strong>
+    <span>Quarta · 18h30–20h30</span>
+    <span><i>Wednesday · 18:30–20:30</i></span>
+    <span class="session-current-price"></span>
+  </label>
 
-              <label>
-                <input type="checkbox" name="session_date[]" value="22 Julho 2026" data-price="16">
-                <strong>22 Julho</strong>
-                <span>Quarta · 18h30–20h30</span>
-                <span><i>Wednesday · 18:30–20:30</i></span>
-              </label>
+  <label>
+    <input
+      type="checkbox"
+      name="session_date[]"
+      value="22 Julho 2026"
+      data-early-price="16"
+      data-late-price="19"
+      data-early-deadline="2026-07-20T23:59:59">
+    <strong>22 Julho</strong>
+    <span>Quarta · 18h30–20h30</span>
+    <span><i>Wednesday · 18:30–20:30</i></span>
+    <span class="session-current-price"></span>
+  </label>
 
-              <label>
-                <input type="checkbox" name="session_date[]" value="29 Julho 2026" data-price="16">
-                <strong>29 Julho</strong>
-                <span>Quarta · 18h30–20h30</span>
-                <span><i>Wednesday · 18:30–20:30</i></span>
-              </label>
-            </div>
-          </div>
-        </section>
+  <label>
+    <input
+      type="checkbox"
+      name="session_date[]"
+      value="29 Julho 2026"
+      data-early-price="16"
+      data-late-price="19"
+      data-early-deadline="2026-07-27T23:59:59">
+    <strong>29 Julho</strong>
+    <span>Quarta · 18h30–20h30</span>
+    <span><i>Wednesday · 18:30–20:30</i></span>
+    <span class="session-current-price"></span>
+  </label>
+</div>
 
         <!-- PARTICIPANTE -->
         <section class="register-row participant-row">
@@ -251,7 +270,30 @@ permalink: /inscricao/
 </main>
 
 <script>
+  function getSessionPrice(session) {
+    const now = new Date();
+    const deadline = new Date(session.dataset.earlyDeadline);
+    const earlyPrice = Number(session.dataset.earlyPrice || 16);
+    const latePrice = Number(session.dataset.latePrice || 19);
+
+    return now <= deadline ? earlyPrice : latePrice;
+  }
+
+  function updateVisiblePrices() {
+    document.querySelectorAll('input[name="session_date[]"]').forEach(function(session) {
+      const price = getSessionPrice(session);
+      const label = session.closest('label');
+      const priceText = label.querySelector('.session-current-price');
+
+      if (priceText) {
+        priceText.innerHTML = '<strong>' + price + '€</strong>';
+      }
+    });
+  }
+
   function updateRegisterSummary() {
+    updateVisiblePrices();
+
     const selectedSessions = Array.from(
       document.querySelectorAll('input[name="session_date[]"]:checked')
     );
@@ -278,7 +320,7 @@ permalink: /inscricao/
     summaryTitle.innerHTML = '<span class="pt"><i>Pedido de inscrição / </i></span><span class="en" style="font-size: 1.7rem;"><i>Registration request</i></span>';
 
     summaryDetails.innerHTML = selectedSessions.map(function(session) {
-      const price = Number(session.dataset.price || 16);
+      const price = getSessionPrice(session);
       total += price;
 
       return '<div class="summary-line">' +
@@ -289,10 +331,13 @@ permalink: /inscricao/
     }).join('');
 
     summaryPrice.textContent = total + '€';
-    summarySmall.innerHTML = total + '€ · pagamento por transferência bancária<br><i>' + total + '€ · payment by bank transfer</i>';
+
+    summarySmall.innerHTML =
+      total + '€ · pagamento por transferência bancária<br>' +
+      '<i>' + total + '€ · payment by bank transfer</i>';
 
     googleSession.value = selectedSessions.map(function(session) {
-      return session.value;
+      return session.value + ' - ' + getSessionPrice(session) + '€';
     }).join(', ');
 
     googleTotal.value = total + '€';
@@ -312,21 +357,18 @@ permalink: /inscricao/
     return true;
   }
 
-function showSuccessMessage() {
-  setTimeout(function () {
+  function showSuccessMessage() {
+    setTimeout(function () {
+      alert(
+        'Obrigada pela sua inscrição!\n\n' +
+        'Receberá dentro de momentos um email com os dados para pagamento por transferência bancária. A sua inscrição só ficará confirmada após receção do comprovativo de pagamento.\n\n' +
+        'Thank you for your registration!\n\n' +
+        'You will shortly receive an email with the bank transfer details. Your registration will only be confirmed after proof of payment has been received.'
+      );
 
-    alert(
-      'Obrigada pela sua inscrição!\n\n' +
-      'Receberá dentro de momentos um email com os dados para pagamento por transferência bancária. A sua inscrição só ficará confirmada após receção do comprovativo de pagamento.\n\n' +
-
-      'Thank you for your registration!\n\n' +
-      'You will shortly receive an email with the bank transfer details. Your registration will only be confirmed after proof of payment has been received.'
-    );
-
-    window.location.replace(window.location.pathname);
-
-  }, 500);
-}
+      window.location.replace(window.location.pathname);
+    }, 500);
+  }
 
   function submitRegisterForm() {
     updateRegisterSummary();
